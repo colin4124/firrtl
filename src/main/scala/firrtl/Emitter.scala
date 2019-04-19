@@ -159,8 +159,8 @@ class VerilogEmitter extends SeqTransform with Emitter {
     case ClockType | AsyncResetType => ""
     case _ => throwInternalError(s"trying to write unsupported type in the Verilog Emitter: $tpe")
   }
-  def emit(x: Any)(implicit w: Writer) { emit(x, 0) }
-  def emit(x: Any, top: Int)(implicit w: Writer) {
+  def emit(x: Any)(implicit w: Writer): Unit = { emit(x, 0) }
+  def emit(x: Any, top: Int)(implicit w: Writer): Unit = {
     def cast(e: Expression): Any = e.tpe match {
       case (t: UIntType) => e
       case (t: SIntType) => Seq("$signed(",e,")")
@@ -439,7 +439,7 @@ class VerilogEmitter extends SeqTransform with Emitter {
         declares += Seq(b, " ", tx, " ", n, ";", info)
     }
 
-    def assign(e: Expression, value: Expression, info: Info) {
+    def assign(e: Expression, value: Expression, info: Info): Unit = {
       assigns += Seq("assign ", e, " = ", value, ";", info)
     }
 
@@ -532,7 +532,7 @@ class VerilogEmitter extends SeqTransform with Emitter {
       }
     }
 
-    def initialize_mem(s: DefMemory) {
+    def initialize_mem(s: DefMemory): Unit = {
       val index = wref("initvar", s.dataType)
       val rstring = rand_string(s.dataType)
       initials += Seq("`ifdef RANDOMIZE_MEM_INIT")
@@ -749,7 +749,7 @@ class VerilogEmitter extends SeqTransform with Emitter {
       }
     }
 
-    def emit_streams() {
+    def emit_streams(): Unit = {
       description match {
         case DocString(s) => build_comment(s.string).foreach(emit(_))
         case other =>

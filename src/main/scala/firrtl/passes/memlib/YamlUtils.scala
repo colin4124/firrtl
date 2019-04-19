@@ -39,10 +39,10 @@ class YamlFileWriter(file: String) {
   import CustomYAMLProtocol._
   val outputBuffer = new CharArrayWriter
   val separator = "--- \n"
-  def append(in: YamlValue) {
+  def append(in: YamlValue): Unit = {
     outputBuffer append s"$separator${in.prettyPrint}"
   }
-  def dump() {
+  def dump(): Unit = {
     val outputFile = new PrintWriter(file)
     outputFile write outputBuffer.toString
     outputFile.close()
