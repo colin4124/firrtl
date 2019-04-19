@@ -4,10 +4,8 @@ package firrtl.passes
 package memlib
 
 import firrtl._
-import firrtl.ir._
 import firrtl.annotations._
 import firrtl.options.HasScoptOptions
-import AnalysisUtils._
 import Utils.error
 import java.io.{File, CharArrayWriter, PrintWriter}
 import wiring._

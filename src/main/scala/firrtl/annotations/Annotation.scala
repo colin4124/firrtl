@@ -3,11 +3,7 @@
 package firrtl
 package annotations
 
-import net.jcazevedo.moultingyaml._
-import firrtl.annotations.AnnotationYamlProtocol._
-import firrtl.Utils.throwInternalError
 
-import scala.collection.mutable
 
 case class AnnotationException(message: String) extends Exception(message)
 

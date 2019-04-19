@@ -5,7 +5,6 @@ package firrtl.stage
 import firrtl._
 import firrtl.ir.Circuit
 import firrtl.annotations.NoTargetAnnotation
-import firrtl.transforms.BlackBoxTargetDirAnno
 import firrtl.options.HasScoptOptions
 
 import logger.LogLevel

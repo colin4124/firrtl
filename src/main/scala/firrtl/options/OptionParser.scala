@@ -2,7 +2,7 @@
 
 package firrtl.options
 
-import firrtl.{FIRRTLException, AnnotationSeq}
+import firrtl.AnnotationSeq
 
 import scopt.OptionParser
 

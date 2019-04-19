@@ -3,11 +3,7 @@
 package firrtl.transforms
 
 import scala.collection.mutable
-import scala.collection.immutable.HashSet
-import scala.collection.immutable.HashMap
-import annotation.tailrec
 
-import Function.tupled
 
 import firrtl._
 import firrtl.ir._

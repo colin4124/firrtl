@@ -4,14 +4,10 @@ package firrtl.passes
 package clocklist
 
 import firrtl._
-import firrtl.ir._
 import annotations._
 import Utils.error
-import java.io.{File, CharArrayWriter, PrintWriter, Writer}
-import wiring.Lineage
-import ClockListUtils._
+import java.io.{PrintWriter, Writer}
 import Utils._
-import memlib.AnalysisUtils._
 import memlib._
 import firrtl.options.RegisteredTransform
 import scopt.OptionParser
