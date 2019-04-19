@@ -4,7 +4,6 @@ package firrtl.passes
 package memlib
 
 import firrtl._
-import firrtl.ir._
 import firrtl.annotations._
 import firrtl.options.{HasShellOptions, ShellOption}
 import AnalysisUtils._
